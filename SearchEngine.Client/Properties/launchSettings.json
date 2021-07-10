@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SearchEngine.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "-p 5000 -i index -q query"
+    }
+  }
+}
