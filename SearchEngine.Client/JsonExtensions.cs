@@ -40,7 +40,7 @@ namespace SearchEngine.Client.Extensions
             {
                 return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new Exception($"Error while DeserializeObject string {content}");
             }

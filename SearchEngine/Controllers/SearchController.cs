@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
+using SearchEngine.Core.Server.Indexes;
 
 namespace SearchEngine.Controllers
 {
@@ -11,7 +13,7 @@ namespace SearchEngine.Controllers
     public class SearchController : ControllerBase
     {
         [HttpPost]
-        public async Task<ActionResult<SearchResponse>> Search([FromBody] SearchRequest request)
+        public async Task<ActionResult<SearchResponse>> Search([FromBody] SearchRequest request, [FromServices] RamSegment ramIndex)
         {
             var response = new SearchResponse
             {
@@ -21,7 +23,6 @@ namespace SearchEngine.Controllers
                     new SearchResponse.Row {  DocumentId = "2", Weight = 234 }
                 }
             };
-
 
             return Ok(response);
         }
