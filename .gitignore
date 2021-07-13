@@ -5,3 +5,5 @@
 /SearchEngine.Client/obj
 /SearchEngine.Client/bin
 /.vs
+/SearchEngine.Core/obj
+/SearchEngine.Core/bin
